@@ -1,0 +1,32 @@
+.logo
+{
+    height: 35px;
+    width: 150px;
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-image: url("images/build\ Up\ logo\ no\ backgroudn.png");
+}
+.center {
+  margin: auto;
+  width: 80%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  padding: 10px;
+}
+
+.mission {
+    font-weight: 1000;
+    font-style: italic;
+}
+
+.button {
+    z-index: 100;
+    border: none;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position:fixed;
+    width: 200px;
+    height: 50px;
+    bottom: 28px;
+    right: 28px;
+}
