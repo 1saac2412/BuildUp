@@ -20,7 +20,8 @@
 
 .button {
     z-index: 100;
-    border: none;
+    border-color: green;
+    border-width: 3px;
     background-color: black;
     color: white;
     text-align: center;
