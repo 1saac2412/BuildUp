@@ -6,6 +6,7 @@
     background-repeat:no-repeat;
     background-image: url("images/build\ Up\ logo\ no\ backgroudn.png");
 }
+
 .center {
   margin: auto;
   width: 80%;
@@ -13,21 +14,65 @@
   padding: 10px;
 }
 
+.padding
+{
+    margin:100px;
+}
+
 .mission {
     font-weight: 1000;
     font-style: italic;
 }
 
+
 .button {
     z-index: 100;
-    border-color: green;
-    border-width: 3px;
+    border: 2px beige solid;
+
     background-color: black;
     color: white;
     text-align: center;
+    text-decoration: none;
+
     position:fixed;
     width: 200px;
     height: 50px;
     bottom: 28px;
     right: 28px;
+    transition: height 0.3s ease, width 0.3s ease, text-decoration 0.3s ease;
+}
+
+.button:hover
+{
+    height: 75px;
+    width: 275px;
+    text-decoration: underline;
+}
+
+
+.footer
+{
+    width:100%;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    background-color: black;
+}
+
+.footer-text
+{
+    border-right: 3px white solid;
+    position: relative;
+    width: 500px;
+    left: -15%;
+    top: 25%;
+}
+
+.socials
+{
+    position:relative;
+    width: 50px;
+    height:50px;
+
+    transform: translate(950px, -70px);
 }

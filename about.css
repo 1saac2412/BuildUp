@@ -1,0 +1,33 @@
+.leadership-pics {
+    image-rendering: crisp-edges;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    margin: 5px;
+
+    border-radius: 100px;
+    height: 300px;
+    border: 2px solid black;
+
+    filter: grayscale(0%);
+    transition: filter 1.0s ease, transform 0.3s ease;
+}
+
+.leadership-pics:hover {
+    filter: grayscale(100%);
+    transform: scale(1.15); 
+}
+
+
+.partners-imgs
+{
+    margin: 50px;
+    height: 300px;
+    transition: transform 1.0s ease;
+
+}
+
+.partners-imgs:hover
+{
+    transform: scale(1.15);
+}
+
