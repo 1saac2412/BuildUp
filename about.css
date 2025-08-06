@@ -2,32 +2,36 @@
     image-rendering: crisp-edges;
     aspect-ratio: 3 / 4;
     object-fit: cover;
-    margin: 5px;
 
     border-radius: 100px;
     height: 300px;
     border: 2px solid black;
 
     filter: grayscale(0%);
-    transition: filter 1.0s ease, transform 0.3s ease;
+    transition: filter 1.0s ease, height 0.3s ease;
+}
+
+.partners-imgs
+{
+    height: 200px;
+    margin: 50px;
+    
+    transition: height 1.0s ease;
+
 }
 
 .leadership-pics:hover {
     filter: grayscale(100%);
-    transform: scale(1.15); 
-}
-
-
-.partners-imgs
-{
-    margin: 50px;
-    height: 300px;
-    transition: transform 1.0s ease;
-
+    height: 400px;
+    z-index: 0.5;
 }
 
 .partners-imgs:hover
 {
-    transform: scale(1.15);
+    height: 250px;
 }
 
+.w3-col {
+    overflow: relative;
+    height: 500px;
+}

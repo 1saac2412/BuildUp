@@ -1,0 +1,16 @@
+.slideshow-container
+{
+    background-image: url(images/build\ Up\ logo\ no\ backgroudn.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+
+    border:2px black solid;
+
+    height: 800px;
+    overflow: hidden;
+
+    object-fit: contain;
+
+
+}

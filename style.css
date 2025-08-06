@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .logo
 {
     height: 35px;
@@ -19,60 +23,52 @@
     margin:100px;
 }
 
-.mission {
-    font-weight: 1000;
-    font-style: italic;
-}
-
 
 .button {
     z-index: 100;
-    border: 2px beige solid;
+    border: 2px goldenrod solid;
 
     background-color: black;
     color: white;
     text-align: center;
-    text-decoration: none;
-
     position:fixed;
     width: 200px;
     height: 50px;
     bottom: 28px;
     right: 28px;
-    transition: height 0.3s ease, width 0.3s ease, text-decoration 0.3s ease;
-}
-
-.button:hover
-{
-    height: 75px;
-    width: 275px;
-    text-decoration: underline;
 }
 
 
-.footer
-{
-    width:100%;
-    margin: 0;
-    padding: 0;
-    height: 200px;
-    background-color: black;
+/* FOOOOTER*/
+
+.footer {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer-text
-{
-    border-right: 3px white solid;
-    position: relative;
-    width: 500px;
-    left: -15%;
-    top: 25%;
+.footer-content {
+  display: flex;
+  align-items: center;
 }
 
-.socials
-{
-    position:relative;
-    width: 50px;
-    height:50px;
+.footer-text {
+  white-space: nowrap;
+  padding: 10px;
+  color: white;
+  font-size: 30px;
+  border-right: 3px solid white;
+  margin-right: 20px;
+}
 
-    transform: translate(950px, -70px);
+.socials {
+  display: flex;
+  gap: 10px;
+  padding-left: 20px;
 }

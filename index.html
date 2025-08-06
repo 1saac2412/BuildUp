@@ -4,8 +4,10 @@
         <title>Home</title>
     </head>
 
-    <link rel="stylesheet" href="style2.css">
+    
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style2.css">
+    <link rel = "stylesheet" href = "index.css"/>
 
     <body style="margin: 0; width: 100%;">
     
@@ -14,10 +16,11 @@
       <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
 
-            <a href="index.html" class="w3-bar-item w3-button"><b>Build</b> Up</a>
+            <a href="#home" class="w3-bar-item w3-button"><b>Build</b> Up</a>
             <!-- Float links to the right. Hide them on small screens -->
             <div class="w3-right w3-hide-small">
             <a href="about.html" class="w3-bar-item w3-button">About</a>
+            <a href="#impact" class="w3-bar-item w3-button"> Our Impact</a>
             <a href="#contact" class="w3-bar-item w3-button">Contact</a>
             </div>
         </div>
@@ -29,7 +32,7 @@
 
       <!-- Button-->
       <button class = "button">
-        <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer" style = "text-decoration: none;"> Subscribe
+        <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer"> Subscribe
           
         </a>
       </button>
@@ -38,7 +41,7 @@
 
 
       <!-- Header -->
-      <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+      <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; margin-top:100px;" id="home">
         <img class="w3-image" src="images/build Up logo no backgroudn - Copy.png" alt="Architecture" width="1500" height="800">
         <div class="w3-display-middle w3-margin-top w3-center">
           <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Build</b></span> <span class="w3-hide-small w3-text-light-grey">Up</span></h1>
@@ -50,13 +53,17 @@
 
 
 
-      <!-- Page content -->
-      <div class="w3-content w3-padding" style="max-width:1564px">
+      <!-- Page content ----------------------------------------->
+
+
+
+
+      <div class="w3-content w3-padding" style="max-width:80%;">
 
         <!-- Our Mission Section -->
 
         <div class="w3-row-padding" >
-          <p class="center mission" >
+          <p class="center" style = "font-weight: 1000; font-style: italic;" >
             Build Up’s mission is to make personal finance clear, relevant, and practical for every young person.
           </p>
           <p class="center">
@@ -65,47 +72,93 @@
         </div>
 
 
-        <!-- Contact Section -->
-        <div class="w3-container w3-padding-32" id="contact">
-          <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Newsletter Archive </h3>
 
-          <p>Catch up on past issues and dive into financial literacy topics..</p>
+        <!--Impact-->
 
+        <div class="w3-container w3-padding-32 impact" id="impact" style = "margin-top: 100px; border-top: 3px black solid">
+          <h2 style = "font-style: italic; margin: 50px; margin-bottom: 10px;;">Our Impact</h2>
+          <p style = "margin-left:50px;">More than just a newsletter.....</p>
+
+          <div class ="slideshow-container">
+            <img class="mySlides" src="images/impact/buildUpImpact 1.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpImpact2.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact3.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpImact4.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact5.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact6.jpg" style="width:100%">
+
+            <img class="mySlides" src="images/impact/buildUpimact7.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact9.jpg" style="width:100%">
+              
+            <img class="mySlides" src="images/impact/buildUpImact10.jpg" style="width:100%">
+              
+            <img class="mySlides" src="images/impact/buildUpimact13.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact14.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact15.jpg" style="width:100%">
+              
+            <img class="mySlides" src="images/impact/buildUpimact16.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact17.jpg" style="width:100%">
+              
+            <img class="mySlides" src="images/impact/buildUpimact19.jpg" style="width:100%">
+            <img class="mySlides" src="images/impact/buildUpimact20.jpg" style="width:100%">
+
+
+          </div>
 
         </div>
+
+
         
       </div>
 
-
-      <!--Footer-->
-  <footer class="footer">
-    <div class = "footer-text center">
-      
-      <p style="color: white; font-size: 30px;">Build Up Financial</p>
-
-    </div>
-
-    <div class = "socials">
-
-        <a href = "https://www.instagram.com/buildupnewsletter/?utm_source=ig_web_button_share_sheet" target="_blank">
-          <img src = "images/logos/insta.png" alt = "instagram" style="width: 50px; height:50px; margin: 10px; margin-top: 0px;">
-
-        </a>
-
-      
-        <a href = "https://discord.gg/SmR6rJE9" target="_blank">
-          <img src="images/logos/discord.png" style="height:35px; object-fit:contain; margin: 10px;">
+  
+<!--Footer-->
+  <footer class="footer" id = "contact">
+    <div style = "align-items: center; display: flex;">
+      <div class = "footer-text">
         
-        </a>
+        <p style="color: white; font-size: 25px;">Build Up Financial</p>
+
+      </div>
+
+      <div class = "socials">
+
+          <a href = "https://www.instagram.com/buildupnewsletter/?utm_source=ig_web_button_share_sheet" target="_blank">
+            <img src = "images/logos/insta.png" alt = "instagram" style="width: 50px; height:50px; margin: 10px; margin-top: 0px;">
+
+          </a>
+
+        
+          <a href = "https://discord.gg/SmR6rJE9" target="_blank">
+            <img src="images/logos/discord.png" style="height:35px; object-fit:contain; margin: 10px;">
+          
+          </a>
 
 
 
 
+      </div>
     </div>
-    
   </footer>
 
-
-
 </body>
+
+
+<script>
+  var myIndex = 0;
+  carousel();
+
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+  }
+</script>
+
 </html>
