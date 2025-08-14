@@ -10,7 +10,7 @@
     height: 800px;
     overflow: hidden;
 
-    object-fit: contain;
+    position:relative;
 
 
 }
