@@ -14,3 +14,13 @@
 
 
 }
+
+
+.WWO-container
+{
+    background-color: rgba(61, 252, 46, 0.25);
+    border-radius: 20px;
+    padding: 2%;
+    padding-bottom: 6%;
+    margin: 2%;
+}

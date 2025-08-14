@@ -1,5 +1,5 @@
 html{
-    scroll-behavior: smooth;
+    scroll-behavior:smooth;
 }
 
 .logo
@@ -20,13 +20,13 @@ html{
 
 .padding
 {
-    margin:100px;
+    margin:10%;
 }
 
 
 .button {
     z-index: 100;
-    border: 2px goldenrod solid;
+    border: 2px rgba(252, 255, 0, 1);
 
     background-color: black;
     color: white;
