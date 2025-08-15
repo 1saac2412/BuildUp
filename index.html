@@ -1,211 +1,542 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Home</title>
-    </head>
+<head>
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-    
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="style2.css">
-    <link rel = "stylesheet" href = "index.css"/>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            width: 100%;
+            color: #333;
+            background-color: #fff;
+        }
 
-    <body style="margin: 0; width: 100%;">
-    
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
 
-      <!-- Navbar (sit on top) -->
-      <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-left: -3%;
+        }
 
-            <a href="#home" class="w3-bar-item w3-button"><b>Build</b> Up</a>
-            <!-- Float links to the right. Hide them on small screens -->
-            <div class="w3-right w3-hide-small">
-            <a href="about.html" class="w3-bar-item w3-button">About</a>
-            <a href="#impact" class="w3-bar-item w3-button"> Our Impact</a>
-            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        .navbar-brand:hover {
+            color: #4CAF50;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            margin-right: 5%;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #555;
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #4CAF50;
+            transform: translateY(-2px);
+        }
+
+        .navbar-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .navbar-button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background: url('images/build Up logo no backgroudn - Copy.png') no-repeat center center/cover;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay to make text readable */
+            background-blend-mode: multiply;
+            color: #fff;
+            position: relative;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 0;
+            animation: slideInTop 1s ease-in-out;
+        }
+
+        .header h1 span {
+            color: #4CAF50;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            max-width: 700px;
+            animation: slideInBottom 1s ease-in-out;
+        }
+
+        .header-button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header-button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        /* Main content sections */
+        .content-section {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #333;
+            animation: slideInLeft 1s ease-in-out;
+        }
+        
+        .mission-section h1 span {
+            color: #4CAF50;
+        }
+
+        .mission-section p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #666;
+            margin-top: 1rem;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        .offerings-section {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            margin-top: 5rem;
+        }
+
+        .offering-card {
+            background-color: #f1f8e9;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 30%;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .offering-card img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            filter: grayscale(100%);
+            margin-bottom: 1rem;
+        }
+
+        .offering-card h2 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .offering-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .impact-section {
+            padding: 8rem 5%;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            font-size: 3rem;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mySlides {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            display: none;
+            animation: fade 1.5s;
+        }
+
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+        }
+
+        .stat-card h2 {
+            font-size: 3rem;
+            color: #4CAF50;
+            margin: 0;
+        }
+
+        .stat-card p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* "Taught At" section */
+        .taught-at-section {
+            padding: 4rem 5%;
+            background-color: #f1f8e9;
+            text-align: center;
+        }
+
+        .taught-at-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .taught-at-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .taught-at-logo img {
+            max-height: 100px;
+            filter: grayscale(100%);
+            border-radius: 50%;
+            opacity: 0.6;
+            transition: filter 0.3s, opacity 0.3s, transform 0.3s;
+        }
+        
+        .taught-at-logo img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .socials a {
+            margin-left: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .socials a:hover {
+            transform: translateY(-5px);
+        }
+
+        .socials img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInTop {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInBottom {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fade {
+            from { opacity: .4 }
+            to { opacity: 1 }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 3rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+
+            .mission-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .offerings-section {
+                flex-direction: column;
+            }
+
+            .offering-card {
+                width: 100%;
+            }
+
+            .impact-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-text {
+                margin-bottom: 1rem;
+            }
+        }
+
+        
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="#home" class="navbar-brand">Build Up</a>
+    <div class="navbar-links">
+        <a href="about.html">About</a>
+        <a href="#impact">Our Impact</a>
+        <a href="#contact">Contact</a>
+        <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer" class="navbar-button">Subscribe</a>
+    </div>
+</nav>
+
+<header class="header" id="home">
+    <h1 class="animate-on-scroll"><b>Build</b> <span>Up</span></h1>
+    <p class="animate-on-scroll">Empowering Youth Through Financial Literacy</p>
+    <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer" class="header-button animate-on-scroll">Subscribe Now</a>
+</header>
+
+<main>
+    <section class="content-section mission-section">
+        <h1>
+            Empowering Youth Through <br> <span>Financial Literacy</span>
+        </h1>
+        <p>
+            Build Up’s mission is to make personal finance clear, relevant, and practical for every young person.
+        </p>
+    </section>
+
+    <div class="content-section">
+        <section class="offerings-section">
+            <div class="offering-card">
+                <img src="images/logos/email-icon.png" alt="Email Icon">
+                <h2>Weekly Newsletters</h2>
+                <p>Bite-sized financial lessons delivered straight to your inbox every week, covering everything from budgeting basics to investment fundamentals.</p>
+            </div>
+            <div class="offering-card">
+                <img src="images/logos/book-icon.jpg" alt="Book Icon">
+                <h2>Educational Resources</h2>
+                <p>Access a growing library of financial education materials, guides, and tools specifically designed for young adults.</p>
+            </div>
+            <div class="offering-card">
+                <img src="images/logos/community-icon.jpg" alt="Community Icon">
+                <h2>Community Support</h2>
+                <p>Join a community of peers and mentors committed to financial empowerment and building a stronger financial future together.</p>
+            </div>
+        </section>
+    </div>
+
+    <section class="impact-section" id="impact">
+        <h2>Our Impact</h2>
+        <p>More than just a newsletter...</p>
+        <div class="slideshow-container">
+            <img class="mySlides" src="images/impact/buildUpImpact 1.jpg" alt="Impact image 1">
+            <img class="mySlides" src="images/impact/buildUpImpact2.jpg" alt="Impact image 2">
+            <img class="mySlides" src="images/impact/buildUpimact3.jpg" alt="Impact image 3">
+            <img class="mySlides" src="images/impact/buildUpimact5.jpg" alt="Impact image 5">
+            <img class="mySlides" src="images/impact/buildUpimact6.jpg" alt="Impact image 6">
+            <img class="mySlides" src="images/impact/buildUpimact9.jpg" alt="Impact image 9">
+            <img class="mySlides" src="images/impact/buildUpImact10.jpg" alt="Impact image 10">
+            <img class="mySlides" src="images/impact/buildUpimact13.jpg" alt="Impact image 13">
+            <img class="mySlides" src="images/impact/buildUpimact14.jpg" alt="Impact image 14">
+            <img class="mySlides" src="images/impact/buildUpimact15.jpg" alt="Impact image 15">
+            <img class="mySlides" src="images/impact/buildUpimact16.jpg" alt="Impact image 16">
+            <img class="mySlides" src="images/impact/buildUpimact17.jpg" alt="Impact image 17">
+            <img class="mySlides" src="images/impact/buildUpimact19.jpg" alt="Impact image 19">
+            <img class="mySlides" src="images/impact/buildUpimact20.jpg" alt="Impact image 20">
+        </div>
+        <div class="impact-stats">
+            <div class="stat-card">
+                <h2>5,000+</h2>
+                <p>Subscribers</p>
+            </div>
+            <div class="stat-card">
+                <h2>150+</h2>
+                <p>Newsletters</p>
             </div>
         </div>
-      </div>
+    </section>
 
-
-      <!--- NavBar end -->
-
-
-      <!-- Button-->
-      <button class = "button">
-        <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer"> Subscribe
-          
-        </a>
-      </button>
-
-      <!--End-->
-
-
-      <!-- Header -->
-      <header class="w3-display-container w3-content w3-wide" style="max-width:1500px; margin-top:100px;" id="home">
-        <img class="w3-image" src="images/build Up logo no backgroudn - Copy.png" alt="Architecture" width="1500" height="800">
-        <div class="w3-display-middle w3-margin-top w3-center">
-          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Build</b></span> <span class="w3-hide-small w3-text-light-grey">Up</span></h1>
+    <section class="taught-at-section">
+        <h2>Taught At</h2>
+        <div class="taught-at-logos">
+            <div class="taught-at-logo">
+                <img src="images/logos/cerritos_college_logo.jpg" alt="Cerritos College Logo">
+            </div>
+            <div class="taught-at-logo">
+                <img src="images/logos/ABC_school_logo.png" alt="ABC Unified School District Logo">
+            </div>
         </div>
-      </header>
+    </section>
+</main>
 
-
-
-
-
-
-      <!-- Page content ----------------------------------------->
-
-
-
-
-      <div class="w3-content w3-padding" style="max-width:80%;">
-
-        <!-- Our Mission Section -->
-
-        <div class="w3-row-padding" style="margin-top: 5%;" >
-          <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 65px; font-weight: 800;">
-            Empowering Youth Through <span style="color:green; font-size: 75px;"> <br> &emsp;Financial Literacy</span> 
-          </h1>
-
-          <p class="center" style = "font-weight: 1000; font-style: italic; font-size: 25px; margin-left: 20px; margin-left: 10%;" >
-            Build Up’s mission is to make personal finance clear, relevant, and practical for every young person.
-          </p>
+<footer class="footer" id="contact">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>Build Up Financial</p>
         </div>
-
-
-
-        <!--What we offer-->
-
-        <div style = "margin-top: 10%;">
-          <div class = "WWO-container">
-            <img class= "email-icon" src="images/logos/email-icon.png" height = 50px; width="50px" style="filter: grayscale(100%); border-radius: 50%; overflow: hidden;">
-            <h2 style= "color: green; font-size: 30px;">Weekly Newsletters</h2>
-            <P>Bite-sized financial lessons delivered straight to your inbox every week, covering everything from budgeting basics to investment fundamentals.</P>
-
-          </div>
-
-          <div class = "WWO-container">
-            <img class= "bookicon-" src="images/logos/book-icon.jpg" height = 50px; width="50px" style="filter: grayscale(100%); border-radius: 50%; overflow: hidden;">
-            <h2 style= "color: green; font-size: 30px;">Educational Resources</h2>
-            <P>Access a growing library of financial education materials, guides, and tools specifically designed for young adults.</P>
-
-          </div>
-
-          <div class = "WWO-container">
-            <img class= "community-icon" src="images/logos/community-icon.jpg" height = 50px; width="50px" style="filter: grayscale(100%); border-radius: 50%; overflow: hidden;">
-            <h2 style= "color: green; font-size: 30px;">Community Support</h2>
-            <P>Join a community of peers and mentors commited to financial empowerment and building a stronger financial future together.</P>
-
-          </div>
-
-
+        <div class="socials">
+            <a href="https://www.instagram.com/buildupnewsletter/?utm_source=ig_web_button_share_sheet" target="_blank">
+                <img src="images/logos/insta.png" alt="Instagram">
+            </a>
+            <a href="https://discord.gg/SmR6rJE9" target="_blank">
+                <img src="images/logos/discord.png" alt="Discord" style="width: fit-content; width: 37%;">
+            </a>
         </div>
-
-
-
-        <!--Impact-->
-
-        <div class="w3-container w3-padding-32 impact" id="impact" style = "margin-top: 100px; border-top: 3px black solid">
-          <h2 style = "font-style: italic; margin: 50px; margin-bottom: 10px; font-size: 50px;">Our Impact</h2>
-          <p style = "margin-left:3%; margin-bottom: 5%;">More than just a newsletter.....</p>
-
-          <div class ="slideshow-container">
-            <img class="mySlides" src="images/impact/buildUpImpact 1.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpImpact2.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact3.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpImact4.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact5.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact6.jpg" style="width:100%; height:100%; object-fit: cover;">
-
-            <img class="mySlides" src="images/impact/buildUpimact7.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact9.jpg" style="width:100%; height:100%; object-fit: cover;">
-              
-            <img class="mySlides" src="images/impact/buildUpImact10.jpg" style="width:100%; height:100%; object-fit: cover;">
-              
-            <img class="mySlides" src="images/impact/buildUpimact13.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact14.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact15.jpg" style="width:100%; height:100%; object-fit: cover;">
-              
-            <img class="mySlides" src="images/impact/buildUpimact16.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact17.jpg" style="width:100%; height:100%; object-fit: cover;">
-              
-            <img class="mySlides" src="images/impact/buildUpimact19.jpg" style="width:100%; height:100%; object-fit: cover;">
-            <img class="mySlides" src="images/impact/buildUpimact20.jpg" style="width:100%; height:100%; object-fit: cover;">
-
-
-          </div>
-
-
-
-        </div>
-
-        
-        <div>
-
-          <div style="width:fit-content; display:inline-block; margin:2%; margin-right: 10%; ">
-            <h2 style= "color: black; font-size: 40px;">5,000+ Subscribers</h2>
-
-          </div>
-
-          
-          <div style="width: fit-content; display:inline-block;">
-            <h2 style= "color: black; font-size: 40px;">150+ Newsletters</h2>
-
-          </div>
-
-        </div>
-
-        
-      </div>
-
-  
-<!--Footer-->
-  <footer class="footer" id = "contact">
-    <div style = "align-items: center; display: flex;">
-      <div class = "footer-text">
-        
-        <p style="color: white; font-size: 25px;">Build Up Financial</p>
-
-      </div>
-
-      <div class = "socials">
-
-          <a href = "https://www.instagram.com/buildupnewsletter/?utm_source=ig_web_button_share_sheet" target="_blank">
-            <img src = "images/logos/insta.png" alt = "instagram" style="width: 50px; height:50px; margin: 10px; margin-top: 0px;">
-
-          </a>
-
-        
-          <a href = "https://discord.gg/SmR6rJE9" target="_blank">
-            <img src="images/logos/discord.png" style="height:35px; object-fit:contain; margin: 10px;">
-          
-          </a>
-
-
-
-
-      </div>
     </div>
-  </footer>
-
-</body>
-
+</footer>
 
 <script>
-  var myIndex = 0;
-  carousel();
+    // Slideshow logic
+    var myIndex = 0;
+    carousel();
 
-  function carousel() {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
+    function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}    
+        x[myIndex-1].style.display = "block";  
+        setTimeout(carousel, 2000); // Change image every 2 seconds
     }
-    myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
-    x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
-  }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 </script>
 
+</body>
 </html>

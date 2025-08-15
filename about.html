@@ -1,206 +1,426 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>About</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-
-    
+<head>
+    <title>About</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="about.css">
-    <body>
-    
+    <style>
+        /* General page styles for continuity */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-    <!-- Navbar (sit on top) -->
-    <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            width: 100%;
+            color: #333;
+            background-color: #fff;
+            padding-top: 5rem; /* Add padding to prevent content from being hidden behind the fixed navbar */
+        }
 
-        <a href="index.html" class="w3-bar-item w3-button"><b>Build</b> Up</a>
-        <!-- Float links to the right. Hide them on small screens -->
-        <div class="w3-right w3-hide-small">
-        <a href="about.html" class="w3-bar-item w3-button">About</a>
-        <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-left: -3%;
+        }
+
+        .navbar-brand:hover {
+            color: #4CAF50;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            margin-right: 5%;
+        }
+
+        .navbar-links a {
+            text-decoration: none;
+            color: #555;
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            font-weight: 600;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .navbar-links a:hover {
+            color: #4CAF50;
+            transform: translateY(-2px);
+        }
+
+        .navbar-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+            white-space: nowrap;
+        }
+
+        .navbar-button:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            text-align: center;
+            background: url('images/build Up logo no backgroudn - Copy.png') no-repeat center center/cover;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: multiply;
+            color: #fff;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .header h1 span {
+            color: #4CAF50;
+        }
+        
+        .header p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            max-width: 700px;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 8rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .about-section p {
+            font-size: 1.2rem;
+            color: #666;
+            margin: 1rem auto 2rem;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        /* Leadership Section */
+        .leadership-section {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .leadership-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 3rem;
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        .leadership-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .leadership-card img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 2px solid #4CAF50;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            cursor: pointer;
+        }
+
+        .leadership-card img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .leadership-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-card p {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* Partners Section */
+        .partners-section {
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .partners-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 3rem;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .partner-logo img {
+            height: 100px;
+            width: auto;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .partner-logo img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 5%;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text p {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .socials a {
+            margin-left: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .socials a:hover {
+            transform: translateY(-5px);
+        }
+
+        .socials img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 3rem;
+            }
+
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-text {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="navbar-brand">Build Up</a>
+    <div class="navbar-links">
+        <a href="about.html">About</a>
+        <a href="index.html#impact">Our Impact</a>
+        <a href="#contact">Contact</a>
+        <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer" class="navbar-button">Subscribe</a>
+    </div>
+</nav>
+
+<header class="header" id="home">
+    <h1><b>Build</b> <span>Up</span></h1>
+</header>
+
+<main>
+    <section class="about-section" id="about">
+        <h1>About Us</h1>
+        <p>
+            Financial literacy is an undeniable aspect of life. And yet it's a topic under-discussed in education systems, leading to a society of adults who were not given a firm foundation for economic success.
+        </p>
+        <p>
+            Build Up is a student-led initiative dedicated to making financial education accessible to underserved youth through weekly newsletters, practical tips, and real-world financial guidance.
+        </p>
+    </section>
+
+    <section class="leadership-section">
+        <h2>Leadership</h2>
+        <div class="leadership-grid">
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Rachel Kim.png" alt="Rachael Kim">
+                <h3>Rachael Kim</h3>
+                <p>Founder</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Jake Mok.png" alt="Jake Mok">
+                <h3>Jake Mok</h3>
+                <p>President</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Isaac Gonzalez.jpg" alt="Isaac Gonzalez">
+                <h3>Isaac Gonzalez</h3>
+                <p>Vice President</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Eshmeet Kaur.jpg" alt="Eshmeet Kaur">
+                <h3>Eshmeet Kaur</h3>
+                <p>Director of Content and Education 1/2</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Jacob Chung.jpg" alt="Jacob Chung">
+                <h3>Jacob Chung</h3>
+                <p>Director of Content and Education 2/2</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Ryan Sugita.png" alt="Ryan Sugita">
+                <h3>Ryan Sugita</h3>
+                <p>Chief Finance Officer</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Loraine Felisme.png" alt="Loraine Felisme">
+                <h3>Loraine Felisme</h3>
+                <p>Director of Community Engagement 2/2</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Ta'Liyah Wiley.png" alt="Ta'Liyah Wiley">
+                <h3>Ta'Liyah Wiley</h3>
+                <p>Chief Editor (1/2)</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Michael Lam.png" alt="Michael Lam">
+                <h3>Michael Lam</h3>
+                <p>Chief Editor (2/2)</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Timothy Yang.png" alt="Timothy Yang">
+                <h3>Timothy Yang</h3>
+                <p>Director of Marketing & Outreach (1/2)</p>
+            </div>
+            <div class="leadership-card">
+                <img src="images/Exec Leadership/Connor Lee.jpg" alt="Connor Lee">
+                <h3>Connor Lee</h3>
+                <p>Director of Marketing & Outreach (2/2)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <h2>Our Partners</h2>
+        <p>Our partners bridge the gap between the motivated youth and the newsletter they deserve.</p>
+        <div class="partners-grid">
+            <div class="partner-logo">
+                <img src="images/Partners/Global Eco Forum.jpg" alt="Global Eco Forum Logo">
+            </div>
+            <div class="partner-logo">
+                <img src="images/Partners/Buena park.avif" alt="Buena Park Logo">
+            </div>
+            <div class="partner-logo">
+                <img src="images/Partners/Partner 3.avif" alt="Partner 3 Logo">
+            </div>
+            <div class="partner-logo">
+                <img src="images/Partners/Partner 4.avif" alt="Partner 4 Logo">
+            </div>
+            <div class="partner-logo">
+                <img src="images/Partners/Partner 5.avif" alt="Partner 5 Logo">
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer" id="contact">
+    <div class="footer-content">
+        <div class="footer-text">
+            <p>Build Up Financial</p>
+        </div>
+        <div class="socials">
+            <a href="https://www.instagram.com/buildupnewsletter/?utm_source=ig_web_button_share_sheet" target="_blank">
+                <img src="images/logos/insta.png" alt="Instagram">
+            </a>
+            <a href="https://discord.gg/SmR6rJE9" target="_blank">
+                <img src="images/logos/discord.png" alt="Discord" style="width: fit-content; width: 37%;">
+            </a>
         </div>
     </div>
-    </div>
+</footer>
 
-
-    <!--- NavBar end -->
-
-
-    <!-- Button-->
-    <button class = "button">
-    <a href="https://dashboard.mailerlite.com/forms/449584/89645924386604099/share" target="_blank" rel="noopener noreferrer"> Subscribe
-        
-    </a>
-    </button>
-
-    <!--End-->
-
-
-    <!-- Header -->
-    <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-    <img class="w3-image" src="images/build Up logo no backgroudn - Copy.png" alt="Architecture" width="1500" height="800">
-    <div class="w3-display-middle w3-margin-top w3-center">
-        <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>Build</b></span> <span class="w3-hide-small w3-text-light-grey">Up</span></h1>
-    </div>
-    </header>
-
-
-
-
-
-
-
-<!--Page Content------------------>
-        
-
-
-  <!-- About Section -->
-  <div class="w3-container w3-padding-32 padding" id="about">
-
-    <h1 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h1>
-
-    <p class = "center" style = "font-size: 20px; margin: -10px;">&emsp;Financial literacy is an undeniable aspect of life. 
-      And yet it's a topic under-discussed in education systems,leading to a
-      society of adults who were not given a firm foundation for economic success. 
-      So take your financial literacy into your own hands and sign up for our newsletter. 
-      Aside from weekly chapters to guide you through the world of finance, join forthese further perks!
-    </p>
-
-    <p class="center" style = "font-size: 20px;">
-            Build Up is a student-led initiative dedicated to making financial education accessible to underserved youth through weekly newsletters, practical tips, and read-world financial guidance.
-          </p>
-  </div>
-
-
-              <!--PEOPLES-->
-
-    <div class="w3-row-padding padding ">
-        <div class="w3-row-padding">
-          <div class="w3-col l3 m6 w3-margin-bottom ">
-            <img src="images/Exec Leadership/Rachel Kim.png" alt="Rachel Kim" class = "leadership-pics">
-            <h3>Rachael Kim</h3>
-            <p class="w3-opacity">Founder</p>
-          </div>
-        </div>
-
-
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="image-wrapper">
-            <img src="images/Exec Leadership/Jake Mok.png" alt="Jake Mok" class = "leadership-pics" >
-            <h3>Jake Mok</h3>
-            <p class="w3-opacity">President</p>
-          </div>
-        </div>
-        
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Isaac Gonzalez.jpg" alt="Isaac Gonzalez" class = "leadership-pics">
-          <h3>Isaac Gonzalez</h3>
-          <p class="w3-opacity">Vice President</p>
-        </div>
-
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Eshmeet Kaur.jpg" alt="Eshmeet Kaur" class = "leadership-pics">
-          <h3>Eshmeet Kaur </h3>
-          <p class="w3-opacity">Director of Content and Education 1/2</p>
-        </div>
-        
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Jacob Chung.jpg" alt="Jacob Chung" class = "leadership-pics">
-          <h3>Jacob Chung</h3>
-          <p class="w3-opacity">Director of Content and Education 2/2</p>
-        </div>
-
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Ryan Sugita.png" alt="Ryan Sugita" class = "leadership-pics">
-          <h3>Ryan Sugita </h3>
-          <p class="w3-opacity">Chief Finance Officer</p>
-        </div>
-        
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Loraine Felisme.png" alt="Loraine Felisme" class = "leadership-pics">
-          <h3>Loraine Felisme</h3>
-          <p class="w3-opacity">Director of Community Engagement 2/2</p>
-        </div>
-
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Ta'Liyah Wiley.png" alt="Ta'Liyah Wiley" class = "leadership-pics">
-          <h3>Ta'Liyah Wiley </h3>
-          <p class="w3-opacity"> Chief Editor (1/2)</p>
-        </div>
-        
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Michael Lam.png" alt="Michael Lam" class = "leadership-pics">
-          <h3>Michael Lam</h3>
-          <p class="w3-opacity">Chief Editor</p>
-        </div>
-
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Timothy Yang.png" alt="Timonthy Yang" class = "leadership-pics">
-          <h3>Timonthy Yang </h3>
-          <p class="w3-opacity"> Director of Marketing & Outreach (1/2)</p>
-        </div>
-        
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <img src="images/Exec Leadership/Connor Lee.jpg" alt="Connor Lee " class = "leadership-pics">
-          <h3>Connor Lee</h3>
-          <p class="w3-opacity">Director of Marketing & Outreach (2/2)</p>
-        </div>
-
-      </div>
-
-    </div>
-
-
-
-
-
-
-    <div class ="padding">
-
-        <h1 class = "w3-border-light-grey"> Our Partners </h1>
-        
-        <p class = "center" style = "font-size: 20px;">Our partners bridge the gap between the motivated youth and the newsletter they deserve.</p>
-        <img src="images/Partners/Global Eco Forum.jpg" class = "partners-imgs">
-        <img src="images/Partners/Buena park.avif"  class = "partners-imgs">
-        <img src="images/Partners/Partner 3.avif"  class = "partners-imgs">
-        <img src="images/Partners/Partner 4.avif"  class = "partners-imgs">
-        <img src="images/Partners/Partner 5.avif"  class = "partners-imgs">
-
-    </div>
-
-
-<!--Footer-->
-  <footer class="footer" id = "contact">
-    <div style = "align-items: center; display: flex;">
-      <div class = "footer-text">
-        
-        <p style="color: white; font-size: 25px;">Build Up Financial</p>
-
-      </div>
-
-      <div class = "socials">
-
-          <a href = "https://www.instagram.com/buildupnewsletter/?utm_source=ig_web_button_share_sheet" target="_blank">
-            <img src = "images/logos/insta.png" alt = "instagram" style="width: 50px; height:50px; margin: 10px; margin-top: 0px;">
-
-          </a>
-
-        
-          <a href = "https://discord.gg/SmR6rJE9" target="_blank">
-            <img src="images/logos/discord.png" style="height:35px; object-fit:contain; margin: 10px;">
-          
-          </a>
-
-
-
-
-      </div>
-    </div>
-  </footer>
+<script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
